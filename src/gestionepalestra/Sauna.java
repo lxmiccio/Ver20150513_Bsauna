@@ -43,7 +43,7 @@ public abstract class Sauna
 		int postiDisponibili = this.capienzaMassima;
 		for(Prenotazione p : this.prenotazioni)
 			if(!prenotazione.getDal().isAfter(p.getAl()) && !prenotazione.getAl().isBefore(p.getDal()))
-				postiDisponibili -= 1;
+				postiDisponibili -= p.getPostiOccupati();
 		return postiDisponibili;
 	}
 	
